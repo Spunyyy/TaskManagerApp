@@ -1,0 +1,22 @@
+﻿<Page x:Class="TaskManagerApp.Pages.TaskPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:TaskManagerApp.View.Controls" xmlns:local="clr-namespace:TaskManagerApp.Pages"
+      mc:Ignorable="d" 
+        d:DesignHeight="757" d:DesignWidth="1170"
+  Title="ProjectsPage">
+
+    <Grid>
+        <ScrollViewer Margin="25 25 25 102" VerticalScrollBarVisibility="Auto">
+            <WrapPanel x:Name="taskPanel" HorizontalAlignment="Center" VerticalAlignment="Center" ItemWidth="366" ItemHeight="530">
+                
+            </WrapPanel>
+        </ScrollViewer>
+
+        <Button Style="{StaticResource baseButton}" x:Name="backButton" Content="Back to projects" HorizontalAlignment="Left" Height="45" Margin="25,680,0,0" VerticalAlignment="Top" Width="160" Click="backButton_Click"/>
+        <Button Style="{StaticResource baseButton}" x:Name="addTaskButton" Content="Add task" HorizontalAlignment="Left" Height="45" Margin="205,680,0,0" VerticalAlignment="Top" Width="160" Click="addTaskButton_Click"/>
+
+    </Grid>
+</Page>

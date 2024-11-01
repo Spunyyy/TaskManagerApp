@@ -1,0 +1,70 @@
+﻿<Window x:Class="TaskManagerApp.Windows.AssignedUsersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManagerApp.Windows"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Title="AssignedUsersWindow" Height="450" Width="800">
+    <Border Background="#181830" CornerRadius="15">
+        <Grid>
+            <Border x:Name="topBar" Height="25" Background="#181830" CornerRadius="15 15 0 0" Margin="0,0,0,425" MouseDown="topBar_MouseDown"/>
+            <Button x:Name="closeButton" Style="{StaticResource topBarButton}" Margin="0,3,5,422" Click="closeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/close.png"/>
+            </Button>
+            <Button x:Name="minimizeButton" Style="{StaticResource topBarButton}" Margin="0,3,30,422" Click="minimizeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/minimize.png"/>
+            </Button>
+
+
+
+            <TextBlock Style="{StaticResource txtBlock}" HorizontalAlignment="Left" Margin="30,45,0,0" TextWrapping="Wrap" Text="All users" VerticalAlignment="Top"/>
+
+            <DataGrid Width="340" Height="280" Margin="30 75 0 0" x:Name="unassignedUsersDataGrid"
+                      Style="{StaticResource dataGridStyle}"
+                      ColumnHeaderStyle="{StaticResource dataGridHeaderStyle}" 
+                      RowStyle="{StaticResource dataGridSelectionRowStyle}" SelectionMode="Extended"
+                      HorizontalAlignment="Left" VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn CellStyle="{StaticResource dataGridTextColumn}" Header="Name" Binding="{Binding Name}" Width="120"/>
+                    <DataGridTextColumn CellStyle="{StaticResource dataGridTextColumn}" Header="Surname" Binding="{Binding Surname}" Width="120"/>
+                    <DataGridTextColumn CellStyle="{StaticResource dataGridTextColumn}" Header="Role" Binding="{Binding Role.RoleName}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <Button x:Name="assignButton" Style="{StaticResource baseButton}" HorizontalAlignment="Left" Margin="385,185,0,0" VerticalAlignment="Top" Height="35" Width="35" Click="assignButton_Click">
+                <Image Source="pack://application:,,,/View/Images/arrowRight.png"/>
+            </Button>
+            <Button x:Name="unassignButton" Style="{StaticResource baseButton}" HorizontalAlignment="Left" Margin="385,225,0,0" VerticalAlignment="Top" Height="35" Width="35" Click="unassignButton_Click">
+                <Image Source="pack://application:,,,/View/Images/arrowLeft.png"/>
+            </Button>
+
+            <TextBlock Style="{StaticResource txtBlock}" HorizontalAlignment="Left" Margin="435,45,0,0" TextWrapping="Wrap" Text="Assigned users" VerticalAlignment="Top"/>
+
+            <DataGrid Width="340" Height="280" Margin="435 75 0 0" x:Name="assignedUsersDataGrid"
+                      Style="{StaticResource dataGridStyle}"
+                      ColumnHeaderStyle="{StaticResource dataGridHeaderStyle}" 
+                      RowStyle="{StaticResource dataGridSelectionRowStyle}" SelectionMode="Extended"
+                      HorizontalAlignment="Left" VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn CellStyle="{StaticResource dataGridTextColumn}" Header="Name" Binding="{Binding Name}" Width="120"/>
+                    <DataGridTextColumn CellStyle="{StaticResource dataGridTextColumn}" Header="Surname" Binding="{Binding Surname}" Width="120"/>
+                    <DataGridTextColumn CellStyle="{StaticResource dataGridTextColumn}" Header="Role" Binding="{Binding Role.RoleName}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button x:Name="stornoButton" Style="{StaticResource baseButton}" Content="Storno" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="stornoButton_Click" />
+            <Button x:Name="saveButton" Style="{StaticResource baseButton}" Content="Save" HorizontalAlignment="Left" Margin="120,390,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="saveButton_Click"/>
+
+
+        </Grid>
+    </Border>
+
+
+</Window>

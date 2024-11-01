@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="View\Images\addProject.png" />
+    <None Remove="View\Images\arrowLeft.png" />
+    <None Remove="View\Images\arrowRight.png" />
+    <None Remove="View\Images\calendar.png" />
+    <None Remove="View\Images\changePassword.png" />
+    <None Remove="View\Images\close.png" />
+    <None Remove="View\Images\delete.png" />
+    <None Remove="View\Images\edit.png" />
+    <None Remove="View\Images\minimize.png" />
+    <None Remove="View\Images\mngUser.png" />
+    <None Remove="View\Images\notification.png" />
+    <None Remove="View\Images\project.png" />
+    <None Remove="View\Images\roles.png" />
+    <None Remove="View\Images\user.png" />
+    <None Remove="View\Images\userAdd.png" />
+    <None Remove="View\Images\viewNotification.png" />
+    <None Remove="View\Images\viewProject.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\Images\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

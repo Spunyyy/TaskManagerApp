@@ -1,0 +1,40 @@
+﻿<Window x:Class="TaskManagerApp.Windows.DBSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManagerApp.Windows"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Title="DBSettingsWindow" Height="250" Width="400">
+    <Border Background="#181830" CornerRadius="15">
+        <Grid>
+            <Border x:Name="topBar" Height="25" Background="#181830" CornerRadius="15 15 0 0" Margin="0,0,0,225" MouseDown="topBar_MouseDown"/>
+            <Button x:Name="closeButton" Style="{StaticResource topBarButton}" Margin="0 0 5 220" Click="closeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/close.png"/>
+            </Button>
+            <Button x:Name="minimizeButton" Style="{StaticResource topBarButton}" Margin="0 0 30 220" Click="minimizeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/minimize.png"/>
+            </Button>
+
+
+            <Label Content="Database server:" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <Label Content="Database name:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <Label Content="Username:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <Label Content="Password:" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+
+            <TextBox x:Name="databaseServerTxtBox" Style="{StaticResource previewTextBox}" TextWrapping="NoWrap" HorizontalAlignment="Left" Margin="155,35,0,0" VerticalAlignment="Top" Width="220"/>
+            <TextBox x:Name="databaseNameTxtBox" Style="{StaticResource previewTextBox}" HorizontalAlignment="Left" Margin="155,70,0,0" VerticalAlignment="Top" Width="220"/>
+            <TextBox x:Name="usernameTxtBox" Style="{StaticResource previewTextBox}" HorizontalAlignment="Left" Margin="109,105,0,0" VerticalAlignment="Top" Width="200"/>
+            <TextBox x:Name="passwordTxtBox" Style="{StaticResource previewTextBox}" HorizontalAlignment="Left" Margin="109,140,0,0" VerticalAlignment="Top" Width="200"/>
+
+            <Button Style="{StaticResource baseButton}" x:Name="confirmButton" Content="Confirm" Margin="110,180,0,0" HorizontalAlignment="Center" Width="100" Height="40" Click="confirmButton_Click"/>
+            <Button Style="{StaticResource baseButton}" x:Name="stornoButton" Content="Storno" Margin="0,180,110,0" HorizontalAlignment="Center" Width="100" Height="40" Click="stornoButton_Click"/>
+            
+        </Grid>
+    </Border>
+</Window>

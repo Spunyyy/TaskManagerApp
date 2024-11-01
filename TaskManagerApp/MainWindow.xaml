@@ -1,0 +1,134 @@
+﻿<Window x:Class="TaskManagerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManagerApp"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Title="MainWindow" Height="787" Width="1400">
+    <Border Background="#272537" CornerRadius="15">
+        <Grid>
+            <!-- TOP BAR -->
+            <Border x:Name="topBar" Height="25" Background="#272537" CornerRadius="15 15 0 0" Margin="0,0,0,762" MouseDown="topBar_MouseDown"/>
+            <Button x:Name="closeButton" Style="{StaticResource topBarButton}" Margin="0 0 5 757" Click="closeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/close.png"/>
+            </Button>
+            <Button x:Name="minimizeButton" Style="{StaticResource topBarButton}" Margin="0 0 30 757" Click="minimizeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/minimize.png"/>
+            </Button>
+            
+            <!-- MENU -->
+            <Border Background="#202030" CornerRadius="15 0 0 15" Width="230" HorizontalAlignment="Left">
+                <StackPanel Orientation="Vertical">
+                    <Menu Height="450" Background="Transparent" Margin="0 80 0 0">
+
+                        <Menu.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </Menu.ItemsPanel>
+
+                        <MenuItem Header="User"
+                                  Template="{StaticResource Menu_Template}">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/View/Images/user.png" Stretch="Uniform"/>
+                            </MenuItem.Icon>
+
+                            <MenuItem Header="Add"
+                                      Name="addUserItem"
+                                      Click="addUserItem_Click"
+                                      Template="{StaticResource Menu_Template}">
+                                <MenuItem.Icon>
+                                    <Image Source="pack://application:,,,/View/Images/userAdd.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                            <MenuItem Header="Manage"
+                                      Name="manageUserItem"
+                                      Click="manageUserItem_Click"
+                                      Template="{StaticResource Menu_Template}">
+                                <MenuItem.Icon>
+                                    <Image Source="pack://application:,,,/View/Images/mngUser.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                            <MenuItem Header="Roles"
+                                      Name="rolesItem"
+                                      Click="rolesItem_Click"
+                                      Template="{StaticResource Menu_Template}">
+                                <MenuItem.Icon>
+                                    <Image Source="pack://application:,,,/View/Images/roles.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Password"
+                                      Name="chngPwdItem"
+                                      Click="chngPwdItem_Click"
+                                      Template="{StaticResource Menu_Template}">
+                                <MenuItem.Icon>
+                                    <Image Source="pack://application:,,,/View/Images/changePassword.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+
+                        </MenuItem>
+
+                        <MenuItem Header="Projects"
+                                  Template="{StaticResource Menu_Template}">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/View/Images/project.png" Stretch="Uniform"/>
+                            </MenuItem.Icon>
+
+                            <MenuItem Header="Add"
+                                      Name="addProjectsItem"
+                                      Click="addProjectsItem_Click"
+                                      Template="{StaticResource Menu_Template}">
+                                <MenuItem.Icon>
+                                    <Image Source="pack://application:,,,/View/Images/addProject.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                            <MenuItem Header="View"
+                                      Name="viewProjectsItem"
+                                      Click="viewProjectsItem_Click"
+                                      Template="{StaticResource Menu_Template}">
+                                <MenuItem.Icon>
+                                    <Image Source="pack://application:,,,/View/Images/viewProject.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+
+                        </MenuItem>
+
+                        <MenuItem Header="Notifications"
+                                  Template="{StaticResource Menu_Template}">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/View/Images/notification.png" Stretch="Uniform"/>
+                            </MenuItem.Icon>
+
+                            <MenuItem Header="View"
+                                      Name="viewNotiItem"
+                                      Click="viewNotiItem_Click"
+                                      Template="{StaticResource Menu_Template}">
+                                <MenuItem.Icon>
+                                    <Image Source="pack://application:,,,/View/Images/viewNotification.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+                </StackPanel>
+            </Border>
+
+            <Frame Width="1170" Height="757" NavigationUIVisibility="Hidden" Source="Pages/MainPage.xaml" Name="frame" Margin="230 30 0 0"/>
+
+
+
+
+        </Grid>
+    </Border>
+    
+</Window>

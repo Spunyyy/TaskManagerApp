@@ -1,0 +1,48 @@
+﻿<Window x:Class="TaskManagerApp.Windows.ProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManagerApp.Windows"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Title="ProjectWindow" Height="450" Width="610">
+    <Border Background="#181830" CornerRadius="15">
+        <Grid>
+            <Border x:Name="topBar" Height="25" Background="#181830" CornerRadius="15 15 0 0" Margin="0,0,0,425" MouseDown="topBar_MouseDown"/>
+            <Button x:Name="closeButton" Style="{StaticResource topBarButton}" Margin="0,3,5,422" Click="closeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/close.png"/>
+            </Button>
+            <Button x:Name="minimizeButton" Style="{StaticResource topBarButton}" Margin="0,3,30,422" Click="minimizeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/minimize.png"/>
+            </Button>
+
+            <Label Content="Title: " HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <Label Content="Description: " HorizontalAlignment="Left" Margin="30,75,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <Label Content="Start date: " HorizontalAlignment="Left" Margin="360,40,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <Label Content="End date: " HorizontalAlignment="Left" Margin="360,75,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <Label Content="Priority: " HorizontalAlignment="Left" Margin="360,110,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <Label x:Name="statusLabel" Content="Status: " HorizontalAlignment="Left" Margin="360,145,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+
+            <TextBox x:Name="titleTextBox" Style="{StaticResource previewTextBox}" HorizontalAlignment="Left" Margin="80,40,0,0" VerticalAlignment="Top" Width="250" Text="{Binding Title, TargetNullValue='Title'}" LostFocus="titleTextBox_LostFocus" GotFocus="titleTextBox_GotFocus"/>
+            <TextBox x:Name="descTextBox" Style="{StaticResource descTextBox}" HorizontalAlignment="Left" Margin="30,109,0,0" VerticalAlignment="Top" Width="300" Text="{Binding Description, TargetNullValue='Description'}" Height="200" LostFocus="descTextBox_LostFocus" GotFocus="descTextBox_GotFocus"/>
+
+            <DatePicker x:Name="startDatePicker" Style="{StaticResource datePickerStyle}" SelectedDate="{Binding StartDate, TargetNullValue=''}" FontSize="16" HorizontalAlignment="Left" Margin="456,45,0,0" VerticalAlignment="Top" Width="130"/>
+            <DatePicker x:Name="endDatePicker" Style="{StaticResource datePickerStyle}" SelectedDate="{Binding EndDate}" FontSize="16" HorizontalAlignment="Left" Margin="456,80,0,0" VerticalAlignment="Top" Width="130"/>
+            
+            <ComboBox Style="{StaticResource CustomComboBox}" x:Name="priorityComboBox" FontSize="18" Height="30" Margin="456,110,30,0" VerticalAlignment="Top"/>
+            <ComboBox Style="{StaticResource CustomComboBox}" x:Name="statusComboBox" FontSize="18" Height="30" Margin="456,145,30,0" VerticalAlignment="Top"/>
+
+            <Button Style="{StaticResource baseButton}" x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="142,381,0,0" VerticalAlignment="Top" Height="45" Width="110" Click="saveButton_Click"/>
+            <Button Style="{StaticResource baseButton}" x:Name="stornoButton" Content="Storno" HorizontalAlignment="Left" Margin="22,381,0,0" VerticalAlignment="Top" Height="45" Width="110" Click="stornoButton_Click"/>
+
+
+
+        </Grid>
+    </Border>
+
+</Window>

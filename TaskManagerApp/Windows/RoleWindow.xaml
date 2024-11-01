@@ -1,0 +1,62 @@
+﻿<Window x:Class="TaskManagerApp.Windows.RoleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManagerApp.Windows"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Title="RoleWindow" Height="350" Width="600">
+    <Border Background="#222032" CornerRadius="15">
+        <Grid>
+            <Border x:Name="topBar" Height="25" Background="#222032" CornerRadius="15 15 0 0" Margin="0,0,0,325" MouseDown="topBar_MouseDown"/>
+            <Button x:Name="closeButton" Style="{StaticResource topBarButton}" Margin="0,3,5,322" Click="closeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/close.png"/>
+            </Button>
+            <Button x:Name="minimizeButton" Style="{StaticResource topBarButton}" Margin="0,3,30,322" Click="minimizeButton_Click">
+                <Image Source="pack://application:,,,/View/Images/minimize.png"/>
+            </Button>
+
+            <Label Content="Role name: " HorizontalAlignment="Left" Margin="35,40,0,0" VerticalAlignment="Top" FontSize="18" Foreground="DarkGray"/>
+            <TextBox x:Name="roleNameTextBox" Style="{StaticResource previewTextBox}" HorizontalAlignment="Left" Margin="138,40,0,0" VerticalAlignment="Top" Width="120" Text="{Binding RoleName, TargetNullValue='role name'}" GotFocus="roleNameTextBox_GotFocus" LostFocus="roleNameTextBox_LostFocus" />
+
+            <Label Content="P E R M I S S I O N S" FontSize="22" HorizontalAlignment="Left" Margin="312,45,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="BlanchedAlmond"/>
+            <Border Margin="260,80,20,20" Background="#201827" CornerRadius="15">
+                <Grid x:Name="checkBoxGrid">
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" x:Name="adminCkBx" Tag="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Create user" x:Name="createUserCkBx" Tag="CreateUser" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Manage users" x:Name="managerUserCkBx" Tag="ManageUsers" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,65,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Add task" x:Name="addTaskCkBx" Tag="AddTask" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Edit task" x:Name="editTaskCkBx" Tag="EditTask" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,115,0,0"/>
+                    <!--
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,140,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,165,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,190,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,215,0,0"/>
+                    -->
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Create project" x:Name="createProjectCkBx" Tag="CreateProject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,15,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Delete project" x:Name="deleteProjectCkBx" Tag="DeleteProject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,40,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Assign project" x:Name="assignProjectCkBx" Tag="AssignProject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,65,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Delete task" x:Name="deleteTaskCkBx" Tag="DeleteTask" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,90,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Assign task" x:Name="assignTaskCkBx" Tag="AssignTask" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,115,0,0"/>
+                    <!--
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,140,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,165,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,190,0,0"/>
+                    <CheckBox Style="{StaticResource customCheckBox}" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,215,0,0"/>
+                    -->
+                </Grid>
+            </Border>
+            <Button Style="{StaticResource baseButton}" x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="140,285,0,0" VerticalAlignment="Top" Height="45" Width="110" Click="saveButton_Click"/>
+            <Button Style="{StaticResource baseButton}" x:Name="stornoButton" Content="Storno" HorizontalAlignment="Left" Margin="20,285,0,0" VerticalAlignment="Top" Height="45" Width="110" Click="stornoButton_Click"/>
+
+
+
+        </Grid>
+    </Border>
+
+</Window>
